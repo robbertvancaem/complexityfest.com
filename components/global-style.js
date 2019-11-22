@@ -7,8 +7,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Montserrat', sans-serif;
-  background: ${({ theme }) => theme.colors.black};
-  color: ${({ theme }) => theme.colors.white};
+  font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1920 - 300)));
+  background: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.greyGreen};
 }
 
 a {
@@ -31,11 +32,21 @@ strong {
 }
 
 p {
+  font-size: 1.5em;
   line-height: 2em;
+  margin: 0;
 }
 
 h1 {
-  font-size: 1.6em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: ${props => props.theme.colors.black};
+  font-size: 3em;
+  margin: 0;
+}
+
+h6 {
+  margin: 0;
 }
 `;
 
