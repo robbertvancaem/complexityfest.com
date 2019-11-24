@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Wrapper = styled.nav`
   padding: 1em 4%;
@@ -9,17 +10,17 @@ const Wrapper = styled.nav`
   width: 100%;
 
   a {
-    font-size: 1.4em;
+    text-transform: lowercase;
+    font-size: 0.8em;
     font-weight: 200;
-    padding: 0 1em;
+    padding: 0 2em;
   }
 `;
 const Navigation = () => (
   <Wrapper>
-    <a href="#">Home</a>
-    <a href="#">Info</a>
-    <a href="#">Shows</a>
-    <a href="#">Contact</a>
+    <Link href="/">
+      <a>Home</a>
+    </Link>
   </Wrapper>
 );
 

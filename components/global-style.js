@@ -32,9 +32,8 @@ strong {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 2em;
-  margin: 0;
 }
 
 h1 {
@@ -42,10 +41,6 @@ h1 {
   font-weight: 700;
   color: ${props => props.theme.colors.black};
   font-size: 3em;
-  margin: 0;
-}
-
-h6 {
   margin: 0;
 }
 `;

@@ -4,14 +4,14 @@ import { useSpring, animated } from 'react-spring';
 
 import theme from '../theme';
 
-const Wrapper = styled.button`
-  background: ${props => props.theme.colors.purple};
+const Wrapper = styled.a`
+  background: ${props => props.theme.colors.greyGreen};
   color: ${props => props.theme.colors.white};
   font: inherit;
+  display: inline-block;
   font-size: 1.5em;
   border: none;
   padding: 1em 2em;
-  border-radius: 10px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -32,12 +32,16 @@ const Wrapper = styled.button`
   }
 `;
 
-const Button = ({ children }) => {
+const Button = ({ href, children, ...rest }) => {
   const [{ y, color }, set] = useSpring(() => ({ y: 100, color: theme.colors.white }));
   return (
     <Wrapper
-      onMouseEnter={() => set({ y: 0, color: theme.colors.purple })}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => set({ y: 0, color: theme.colors.greyGreen })}
       onMouseLeave={() => set({ y: 100, color: theme.colors.white })}
+      {...rest}
     >
       <animated.span style={{ color }}>{children}</animated.span>
       <animated.div
