@@ -3,6 +3,7 @@ import App, { Container } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 
+import Navigation from '../components/navigation';
 import GlobalStyle from '../components/global-style';
 import theme from '../theme';
 
@@ -34,6 +35,7 @@ export default class MyApp extends App {
               <title>Complexity Fest | complexityfest.com</title>
             </Head>
             <GlobalStyle />
+            <Navigation />
             <Component {...pageProps} key={router.route} />
           </div>
         </ThemeProvider>

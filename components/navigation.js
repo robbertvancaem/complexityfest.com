@@ -8,6 +8,8 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  position: fixed;
+  z-index: 99;
 
   a {
     text-transform: lowercase;
@@ -18,8 +20,14 @@ const Wrapper = styled.nav`
 `;
 const Navigation = () => (
   <Wrapper>
-    <Link href="/">
+    <Link href="/" scroll={false}>
       <a>Home</a>
+    </Link>
+    <Link href="/fest" scroll={false}>
+      <a>Fest</a>
+    </Link>
+    <Link href="/shows" scroll={false}>
+      <a>Shows</a>
     </Link>
   </Wrapper>
 );

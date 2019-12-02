@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 
-import { getNews } from '../data/posts';
+import { getShows } from '../data/posts';
 import Header from '../components/header';
 import { Box } from '../components/flexbox';
-import News from '../components/news';
+import Show from '../components/show';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Index = ({ news }) => {
+const Index = ({ shows }) => {
   const ref = useRef();
   const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
   const handleScroll = () => {
@@ -59,8 +59,8 @@ const Index = ({ news }) => {
             COMPLEXITY
           </animated.div>
         </div>
-        {news.map(n => (
-          <News key={n.id} {...n} />
+        {shows.map(show => (
+          <Show key={show.id} {...show} />
         ))}
       </Box>
     </Wrapper>
@@ -68,9 +68,9 @@ const Index = ({ news }) => {
 };
 
 Index.getInitialProps = async () => {
-  const news = await getNews();
+  const shows = await getShows();
   return {
-    news,
+    shows,
   };
 };
 

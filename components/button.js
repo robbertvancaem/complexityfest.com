@@ -15,6 +15,8 @@ const Wrapper = styled.a`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  text-align: center;
 
   span {
     z-index: 2;
