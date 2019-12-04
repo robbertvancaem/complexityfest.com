@@ -28,6 +28,17 @@ const Wrapper = styled.div`
     font-weight: 700;
     transform-origin: left bottom;
   }
+
+  input {
+    display: block;
+    padding: 2em;
+    width: 50%;
+    font-size: 1.5em;
+    font: inherit;
+    border: 0;
+    margin: 0 auto;
+    outline: none;
+  }
 `;
 
 const Index = ({ news }) => {
@@ -45,6 +56,8 @@ const Index = ({ news }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   });
+
+  // POST https://us20.api.mailchimp.com/3.0/lists/ec0ad952d3/members
   return (
     <Wrapper>
       <Header />
@@ -62,6 +75,13 @@ const Index = ({ news }) => {
         {news.map(n => (
           <News key={n.id} {...n} />
         ))}
+        <Box background="greyGreen" color="white" my="13%" p="4em" align="center">
+          <p>Sign up for our newsletter</p>
+          <form>
+            <input type="email" name="email" placeholder="Email" />
+            <button type="submit">Sign up</button>
+          </form>
+        </Box>
       </Box>
     </Wrapper>
   );
