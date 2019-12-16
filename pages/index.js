@@ -2,15 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 
+import config from '../config/env';
 import { getNews } from '../data/posts';
-import Header from '../components/header';
-import { Box } from '../components/flexbox';
+import Button from '../components/button';
+import { Box, Flex } from '../components/flexbox';
 import News from '../components/news';
+import Background from '../static/images/1.jpg';
 
 const Wrapper = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: ${props => props.theme.colors.grey};
 
   .background-word-wrapper {
     position: absolute;
@@ -30,6 +31,38 @@ const Wrapper = styled.div`
   }
 `;
 
+const CtaWrapper = styled(Flex)`
+  background: url("${Background}") center center no-repeat;
+  background-size: cover;
+
+  h1, h2 {
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    font-weight: 700;
+  }
+
+  h2 {
+    letter-spacing: 4px;
+  }
+`;
+
+const Cta = () => (
+  <CtaWrapper pt="12em" pb="8em" background="white" alignItems="center" flexDirection="column">
+    <Box>
+      <h1>Complexity Fest 2020</h1>
+    </Box>
+    <Box>
+      <h2>February 15, 2020</h2>
+    </Box>
+    <Box mt="4em">
+      <Button href={config.ticketLink} icon="shopping-cart">
+        Tickets &euro;39,50
+      </Button>
+    </Box>
+  </CtaWrapper>
+);
+
 const Index = ({ news }) => {
   const ref = useRef();
   const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
@@ -47,7 +80,6 @@ const Index = ({ news }) => {
   });
   return (
     <Wrapper>
-      <Header />
       <Box relative ref={ref}>
         <div className="background-word-wrapper">
           <animated.div
@@ -59,6 +91,7 @@ const Index = ({ news }) => {
             COMPLEXITY
           </animated.div>
         </div>
+        <Cta />
         {news.map(n => (
           <News key={n.id} {...n} />
         ))}

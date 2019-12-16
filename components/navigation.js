@@ -2,10 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
+import Icon from './icon';
+
 const Wrapper = styled.nav`
   padding: 1em 4%;
   background: ${props => props.theme.colors.greyGreen};
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   width: 100%;
   position: fixed;
@@ -13,9 +16,8 @@ const Wrapper = styled.nav`
 
   a {
     text-transform: lowercase;
-    font-size: 0.8em;
     font-weight: 200;
-    padding: 0 2em;
+    padding: 0 0 0 1.5em;
   }
 `;
 const Navigation = () => (
@@ -23,12 +25,21 @@ const Navigation = () => (
     <Link href="/" scroll={false}>
       <a>Home</a>
     </Link>
-    <Link href="/fest" scroll={false}>
-      <a>Fest</a>
+    <Link href="/complexity2020" scroll={false}>
+      <a>Complexity 2020</a>
     </Link>
     <Link href="/shows" scroll={false}>
       <a>Shows</a>
     </Link>
+    <Link href="/contact" scroll={false}>
+      <a>Contact</a>
+    </Link>
+    <a href="http://www.facebook.com/complexityfest/" target="_blank" rel="noopener noreferrer">
+      <Icon name="facebook-f" />
+    </a>
+    <a href="https://www.instagram.com/complexityfest/" target="_blank" rel="noopener noreferrer">
+      <Icon name="instagram" />
+    </a>
   </Wrapper>
 );
 

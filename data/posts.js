@@ -20,4 +20,13 @@ const getPosts = async (catId) => {
 
 export const getNews = async () => getPosts(NEWS_ID);
 
-export const getShows = async () => getPosts(SHOWS_ID);
+export const getShows = async () => {
+  const shows = await getPosts(SHOWS_ID);
+
+  return shows.sort(({ date: dateA }, { date: dateB }) => {
+    console.log({ dateA, dateB });
+    const res = new Date(dateA) - new Date(dateB);
+    console.log(res);
+    return res;
+  });
+};

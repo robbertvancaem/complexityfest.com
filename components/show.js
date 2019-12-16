@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 
+import trim from '../utils/trim';
 import useMeasure from '../utils/use-measure';
 import { Box, Flex } from './flexbox';
 import Button from './button';
@@ -27,10 +28,11 @@ const Show = ({
   description,
   poster,
 }) => {
+  const excerpt = trim(description);
   const [open, setOpen] = useState(false);
   const [bind, { height }] = useMeasure();
   const [props, set] = useSpring(() => ({
-    height: 100,
+    height,
     overflow: 'hidden',
     margin: '1em 0',
   }));
@@ -53,19 +55,17 @@ const Show = ({
         </Flex>
         <h1>{title}</h1>
         <animated.div style={props}>
-          <p {...bind}>{description}</p>
+          <p {...bind}>{open ? description : excerpt}</p>
         </animated.div>
         <span
           role="button"
           tabIndex="0"
           onKeyPress={() => {
-            const newHeight = open ? 100 : height;
-            set({ height: newHeight });
+            set({ height });
             setOpen(!open);
           }}
           onClick={() => {
-            const newHeight = open ? 100 : height;
-            set({ height: newHeight });
+            set({ height });
             setOpen(!open);
           }}
         >

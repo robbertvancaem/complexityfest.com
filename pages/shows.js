@@ -3,14 +3,12 @@ import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 
 import { getShows } from '../data/posts';
-import Header from '../components/header';
 import { Box } from '../components/flexbox';
 import Show from '../components/show';
 
 const Wrapper = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: ${props => props.theme.colors.grey};
 
   .background-word-wrapper {
     position: absolute;
@@ -47,7 +45,6 @@ const Index = ({ shows }) => {
   });
   return (
     <Wrapper>
-      <Header />
       <Box relative ref={ref}>
         <div className="background-word-wrapper">
           <animated.div
@@ -56,7 +53,7 @@ const Index = ({ shows }) => {
             }}
             className="background-word"
           >
-            COMPLEXITY
+            SHOWS
           </animated.div>
         </div>
         {shows.map(show => (
