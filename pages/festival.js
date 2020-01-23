@@ -1,15 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Header from '../components/header';
 import { Box } from '../components/flexbox';
 
-const Wrapper = styled.div`
-  background: ${props => props.theme.colors.grey};
-`;
-
 const Fest = () => (
-  <Wrapper>
+  <div>
     <Header />
     <Box px={['4%', null, '31%']} py="8em">
       <h1>About the fest</h1>
@@ -28,8 +23,14 @@ const Fest = () => (
         anything by numbers. It’s about passion, heart and a pioneering spirit.” - Metal Hammer
         (2018)
       </p>
+
+      <p>
+        If you have any questions or you want to suggest your band to play our fest, e-mail
+        {' '}
+        <a href="mailto:complexity@patronaat.nl">complexity [at] patronaat [dot] nl</a>
+      </p>
     </Box>
-  </Wrapper>
+  </div>
 );
 
 export default Fest;

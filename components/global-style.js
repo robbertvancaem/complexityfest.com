@@ -24,6 +24,8 @@ body {
   font-family: 'Adam Ladd', sans-serif;
   font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1920 - 300)));
   background: url("${Background}");
+  background-attachment: fixed;
+  background-size: cover;
   color: ${props => props.theme.colors.greyGreen};
 }
 
@@ -33,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: ${({ theme }) => theme.colors.white};
+  color: #000;
   text-decoration: none;
   font-weight: 600;
 }

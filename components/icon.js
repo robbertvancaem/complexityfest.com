@@ -16,12 +16,7 @@ const StyledIcon = styled.i`
 const Icon = ({
   name, className, mr, ...props
 }) => (
-  <StyledIcon
-    title={`fa-${name}`}
-    className={`fa fa-${name} ${className || ''}`}
-    mr={mr}
-    {...props}
-  />
+  <StyledIcon title={name} className={`fa fa-${name} ${className || ''}`} mr={mr} {...props} />
 );
 
 export default Icon;

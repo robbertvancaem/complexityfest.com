@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
+import useMeasure from 'react-use-measure';
+import { ResizeObserver } from '@juggle/resize-observer';
 
 import trim from '../utils/trim';
-import useMeasure from '../utils/use-measure';
 import { Box, Flex } from './flexbox';
 import Button from './button';
 
@@ -15,6 +16,15 @@ const Wrapper = styled(Flex)`
   p {
     margin: 0;
     white-space: pre-line;
+  }
+
+  span {
+    cursor: pointer;
+    transition: color 0.25s ease;
+
+    :hover {
+      ${props => props.theme.colors.black};
+    }
   }
 `;
 
@@ -30,12 +40,22 @@ const Show = ({
 }) => {
   const excerpt = trim(description);
   const [open, setOpen] = useState(false);
-  const [bind, { height }] = useMeasure();
+  const [ref, { height }] = useMeasure({ polyfill: ResizeObserver });
+
   const [props, set] = useSpring(() => ({
     height,
     overflow: 'hidden',
     margin: '1em 0',
   }));
+
+  useEffect(() => {
+    set({
+      height,
+      overflow: 'hidden',
+      margin: '1em 0',
+    });
+  }, [height]);
+
   return (
     <Wrapper py="8em" px={['4%', null, '13%']} flexDirection={['column-reverse', null, 'row']}>
       <Box width={[1, null, 0.6]} pr="6%" pt={['4em', null, 0]}>
@@ -55,7 +75,7 @@ const Show = ({
         </Flex>
         <h1>{title}</h1>
         <animated.div style={props}>
-          <p {...bind}>{open ? description : excerpt}</p>
+          <p ref={ref}>{open ? description : excerpt}</p>
         </animated.div>
         <span
           role="button"

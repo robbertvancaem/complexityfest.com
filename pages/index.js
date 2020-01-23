@@ -13,6 +13,10 @@ const Wrapper = styled.div`
   width: 100%;
   min-height: 100vh;
 
+  .container {
+    min-height: 100vh;
+  }
+
   .background-word-wrapper {
     position: absolute;
     overflow: hidden;
@@ -80,7 +84,7 @@ const Index = ({ news }) => {
   });
   return (
     <Wrapper>
-      <Box relative ref={ref}>
+      <Box className="container" relative ref={ref}>
         <div className="background-word-wrapper">
           <animated.div
             style={{
