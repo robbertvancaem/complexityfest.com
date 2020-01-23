@@ -33,15 +33,17 @@ Traveling by car? There's a big parking garage close to Patronaat Haarlem, follo
 ];
 
 const Practical = () => (
-  <Box px={['9%', null, '19%']} py={['2em', null, '8em']}>
-    <h1>Practical info</h1>
+  <Box px={['4%', null, '19%']}>
+    <Box py={['2em', null, '8em']}>
+      <h1>Practical info</h1>
 
-    {items.map(({ title, content }) => (
-      <Box key={title} mb="2em">
-        <h4>{title}</h4>
-        <p>{content}</p>
-      </Box>
-    ))}
+      {items.map(({ title, content }) => (
+        <Box key={title} mb="2em">
+          <h4>{title}</h4>
+          <p>{content}</p>
+        </Box>
+      ))}
+    </Box>
   </Box>
 );
 
