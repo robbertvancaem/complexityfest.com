@@ -40,7 +40,7 @@ const Artist = ({
     {isDetail ? (
       <img src={picture} alt={name} />
     ) : (
-      <Link href={`/lineup/${slug}`}>
+      <Link href="/lineup/[slug]" as={`/lineup/${slug}`}>
         <a>
           <img src={picture} alt={name} />
         </a>

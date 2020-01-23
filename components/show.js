@@ -57,7 +57,11 @@ const Show = ({
   }, [height]);
 
   return (
-    <Wrapper py="8em" px={['4%', null, '13%']} flexDirection={['column-reverse', null, 'row']}>
+    <Wrapper
+      py={['2em', null, '8em']}
+      px={['9%', null, '13%']}
+      flexDirection={['column-reverse', null, 'row']}
+    >
       <Box width={[1, null, 0.6]} pr="6%" pt={['4em', null, 0]}>
         <Flex mb="2em">
           <h5>

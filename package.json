@@ -6,7 +6,7 @@
     "start": "now dev",
     "now-build": "next build",
     "deploy": "now",
-    "deploy-prod": "now --target production",
+    "deploy-prod": "now --prod",
     "test": "jest --colors",
     "test:watch": "jest -o --colors --watch -u --collectCoverage"
   },

@@ -14,7 +14,11 @@ const Wrapper = styled(Flex)`
 `;
 
 const News = ({ title, content }) => (
-  <Wrapper py="8em" px={['4%', null, '13%']} flexDirection={['column-reverse', null, 'row']}>
+  <Wrapper
+    py={['2em', null, '8em']}
+    px={['9%', null, '13%']}
+    flexDirection={['column-reverse', null, 'row']}
+  >
     <Box width={0.8} pr="6%" pt={['4em', null, 0]}>
       <h1>{title}</h1>
 

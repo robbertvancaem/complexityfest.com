@@ -8,16 +8,18 @@ import Artist from '../../components/artist';
 import { getArtist } from '../../data/posts';
 
 const Detail = ({ artist }) => (
-  <Box px={['4%', null, '19%']} py="8em">
-    <Link href="/lineup">
-      <a>
-        <Flex alignItems="center">
-          <Icon name="arrow-left" mr="0.5em" />
-          <span>Go back</span>
-        </Flex>
-      </a>
-    </Link>
-    <Artist {...artist} isDetail />
+  <Box px={['4%', null, '19%']}>
+    <Box py={['2em', null, '8em']}>
+      <Link href="/lineup">
+        <a>
+          <Flex alignItems="center">
+            <Icon name="arrow-left" mr="0.5em" />
+            <span>Go back</span>
+          </Flex>
+        </a>
+      </Link>
+      <Artist {...artist} isDetail />
+    </Box>
   </Box>
 );
 

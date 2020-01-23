@@ -65,6 +65,10 @@ h1 {
   font-size: 3em;
   margin: 0;
 }
+
+nav ~ div {
+  padding-top: 60px !important;
+}
 `;
 
 export default GlobalStyle;

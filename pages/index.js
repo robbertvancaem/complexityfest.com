@@ -44,6 +44,8 @@ const CtaWrapper = styled(Flex)`
     text-transform: uppercase;
     text-shadow: 0 0 5px rgba(0, 0, 0, .5);
     font-weight: 700;
+    text-align: center;
+    padding: 0 1em;
   }
 
   h2 {

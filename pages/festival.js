@@ -6,7 +6,7 @@ import { Box } from '../components/flexbox';
 const Fest = () => (
   <div>
     <Header />
-    <Box px={['4%', null, '31%']} py="8em">
+    <Box py={['2em', null, '8em']} px={['9%', null, '31%']}>
       <h1>About the fest</h1>
       <p>
         Complexity is a platform that celebrates adventurous and boundary pushing heavy music in the
