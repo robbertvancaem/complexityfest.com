@@ -45,11 +45,13 @@ const CtaWrapper = styled(Flex)`
     text-shadow: 0 0 5px rgba(0, 0, 0, .5);
     font-weight: 700;
     text-align: center;
-    padding: 0 1em;
+    padding: 0 0.25em 0.15em;
+    background: ${props => props.theme.colors.black};
+    transform: skew(0deg, -2deg);
   }
 
   h2 {
-    letter-spacing: 4px;
+    letter-spacing: -2px;
   }
 `;
 

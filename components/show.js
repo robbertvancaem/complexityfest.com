@@ -9,6 +9,9 @@ import { Box, Flex } from './flexbox';
 import Button from './button';
 
 const Wrapper = styled(Flex)`
+  h4 {
+    margin: 0;
+  }
   h5 {
     margin: 0 0.5em 0 0;
   }
@@ -64,10 +67,9 @@ const Show = ({
     >
       <Box width={[1, null, 0.6]} pr="6%" pt={['4em', null, 0]}>
         <Flex mb="2em">
-          <h5>
-            <strong>DATUM</strong>
-            {` ${date}`}
-          </h5>
+          <h4>{date}</h4>
+        </Flex>
+        <Flex>
           <h5>
             <strong>OPEN</strong>
             {` ${doors}`}

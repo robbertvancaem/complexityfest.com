@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { getSlug } from '../utils/url';
+import format from '../utils/date';
 import wpRestApiUrl from '../config/endpoints';
 
 const SHOWS_ID = 2;
@@ -21,6 +22,7 @@ const getPosts = async (catId) => {
     title: p.title.rendered,
     content: p.content.rendered,
     slug: getSlug(p.link),
+    date: format(p.date, 'MMM D, YYYY'),
     ...p.acf,
   }));
 };

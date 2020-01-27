@@ -23,9 +23,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Adam Ladd', sans-serif;
   font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1920 - 300)));
-  background: url("${Background}");
-  background-attachment: fixed;
-  background-size: cover;
+  background: ${props => props.theme.colors.grey};
   color: ${props => props.theme.colors.greyGreen};
 }
 
