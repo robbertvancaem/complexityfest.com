@@ -95,7 +95,7 @@ const Show = ({
             setOpen(!open);
           }}
         >
-          {`lees ${open ? 'minder' : 'meer'}...`}
+          {`read ${open ? 'less' : 'more'}...`}
         </span>
         <Flex mt="4em" flexDirection={['column', null, 'row']}>
           <Box>

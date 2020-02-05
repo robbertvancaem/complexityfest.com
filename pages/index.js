@@ -8,6 +8,7 @@ import Button from '../components/button';
 import { Box, Flex } from '../components/flexbox';
 import News from '../components/news';
 import Background from '../static/images/1.jpg';
+import NewsletterForm from '../components/newsletter-form';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -100,6 +101,7 @@ const Index = ({ news }) => {
           </animated.div>
         </div>
         <Cta />
+        <NewsletterForm />
         {news.map(n => (
           <News key={n.id} {...n} />
         ))}

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 
-import theme from '../theme';
 import { Box, Flex } from './flexbox';
 import Icon from './icon';
 
