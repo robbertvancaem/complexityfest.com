@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
-import { isValid } from 'date-and-time';
 import { Box } from './flexbox';
 
-const URL = '//patronaat.us20.list-manage.com/subscribe?u=d9d947c60d3c574c643f6ca24&id=ec0ad952d3';
+const URL = '//patronaat.us20.list-manage.com/subscribe/post?u=d9d947c60d3c574c643f6ca24&id=ec0ad952d3';
 
 const isValidEmail = (email) => {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -63,6 +62,15 @@ const Wrapper = styled(Box)`
   }
 `;
 
+const isAlreadySubscribed = (status, message) => {
+  if (status !== 'error') {
+    return false;
+  }
+  if (message.indexOf('already subscribed') > -1) {
+    return true;
+  }
+};
+
 const NewsletterForm = () => {
   const [email, set] = useState('');
   return (
@@ -70,40 +78,47 @@ const NewsletterForm = () => {
       <h2>Signup to the complexity newsletter</h2>
       <MailchimpSubscribe
         url={URL}
-        render={({ subscribe, status }) => (
-          <form
-            onSubmit={(e) => {
-              if (isValidEmail(email)) {
-                subscribe({ EMAIL: email });
-              }
-              e.preventDefault();
-              return false;
-            }}
-          >
-            <Box width={1} className="form-container" mx="auto">
-              <Box mb="1em" flex="1">
-                <input
-                  type="email"
-                  name="email"
-                  onChange={e => set(e.target.value)}
-                  placeholder="Email..."
-                />
+        render={({ subscribe, status, message }) => {
+          const alreadySubscribed = isAlreadySubscribed(status, message);
+          return (
+            <form
+              onSubmit={(e) => {
+                if (status !== 'sending' && isValidEmail(email)) {
+                  subscribe({ EMAIL: email });
+                }
+                e.preventDefault();
+                return false;
+              }}
+            >
+              <Box width={1} className="form-container" mx="auto">
+                <Box mb="1em" flex="1">
+                  <input
+                    type="email"
+                    name="email"
+                    onChange={e => set(e.target.value)}
+                    placeholder="Email..."
+                  />
+                </Box>
+                <Box flex="1">
+                  <button type="submit">Sign up</button>
+                </Box>
+                {status === 'sending' && <p>Sending...</p>}
+                {status === 'error' && alreadySubscribed && (
+                  <p>Looks like you've already subscribed, yay!</p>
+                )}
+                {status === 'error' && !alreadySubscribed && (
+                  <p>Something went wrong, please try again</p>
+                )}
+                {status === 'success' && <p>Thank you for signing up!</p>}
+                <p>
+                  *We promise to handle your data with care and will NEVER share it with third
+                  parties. It will ONLY be used to send you events you might find interesting or
+                  updates about the festival.
+                </p>
               </Box>
-              <Box flex="1">
-                <button type="submit">Sign up</button>
-              </Box>
-              {status === 'sending' && <p>Sending...</p>}
-;
-              {status === 'error' && <p>Something went wrong, please try again</p>}
-              {status === 'success' && <p>Thank you for signing up!</p>}
-              <p>
-                *We promise to handle your data with care and will NEVER share it with third
-                parties. It will ONLY be used to send you events you might find interesting or
-                updates about the festival.
-              </p>
-            </Box>
-          </form>
-        )}
+            </form>
+          );
+        }}
       />
     </Wrapper>
   );
