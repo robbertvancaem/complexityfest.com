@@ -47,7 +47,7 @@ const CtaWrapper = styled(Flex)`
     font-weight: 700;
     text-align: center;
     padding: 0 0.25em 0.15em;
-    background: ${(props) => props.theme.colors.black};
+    background: ${({ theme }) => theme.colors.black};
     transform: skew(0deg, -2deg);
   }
 
