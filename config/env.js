@@ -1,15 +1,15 @@
 const devConfig = {
-  wpUrl: 'https://complexityfest.com/',
-  ticketLink: 'https://www.ticketmaster.nl/event/246163?brand=nl_patronaat',
+  wpUrl: "https://complexityfest.com/",
+  ticketLink: "https://www.ticketmaster.nl/event/270681?brand=nl_patronaat",
 };
 
 const prodConfig = {
-  wpUrl: 'https://complexityfest.com/',
-  ticketLink: 'https://www.ticketmaster.nl/event/246163?brand=nl_patronaat',
+  wpUrl: "https://complexityfest.com/",
+  ticketLink: "https://www.ticketmaster.nl/event/270681?brand=nl_patronaat",
 };
 
 const getConfig = (env) => {
-  if (env === 'development') {
+  if (env === "development") {
     return devConfig;
   }
   return prodConfig;

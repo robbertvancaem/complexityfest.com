@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import media from '../utils/media-queries';
-import config from '../config/env';
-import Link from './link';
-import Icon from './icon';
-import { Box, Flex } from './flexbox';
+import media from "../utils/media-queries";
+import config from "../config/env";
+import Link from "./link";
+import Icon from "./icon";
+import { Box, Flex } from "./flexbox";
 
 const Wrapper = styled.nav`
   padding: 1em 4%;
-  background: ${props => props.theme.colors.black};
+  background: ${(props) => props.theme.colors.black};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +37,7 @@ const Wrapper = styled.nav`
 
     &.selected,
     :hover {
-      color: ${props => props.theme.colors.greyGreen};
+      color: ${(props) => props.theme.colors.greyGreen};
     }
   }
 
@@ -48,7 +48,7 @@ const Wrapper = styled.nav`
     list-style-type: none;
 
     ul {
-      background: ${props => props.theme.colors.black};
+      background: ${(props) => props.theme.colors.black};
       position: absolute;
       display: none;
 
@@ -83,10 +83,10 @@ const Navigation = () => (
   <Wrapper>
     <Flex>
       <Link href="/" scroll={false}>
-        <a>Complexity Fest 2020</a>
+        <a>Complexity Fest 2022</a>
       </Link>
       <Box width="2em" align="center">
-        {'//'}
+        {"//"}
       </Box>
       <ul>
         <li>
@@ -101,7 +101,11 @@ const Navigation = () => (
             </Link>
           </li>
           <li>
-            <a href={config.ticketLink} target="_blank" rel="noopener noreferrer">
+            <a
+              href={config.ticketLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Tickets
             </a>
           </li>
@@ -120,10 +124,18 @@ const Navigation = () => (
       </a>
     </Flex>
     <Box className="socials">
-      <a href="http://www.facebook.com/complexityfest/" target="_blank" rel="noopener noreferrer">
+      <a
+        href="http://www.facebook.com/complexityfest/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Icon name="facebook-f" size="1.5em" />
       </a>
-      <a href="https://www.instagram.com/complexityfest/" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://www.instagram.com/complexityfest/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Icon name="instagram" size="1.5em" />
       </a>
     </Box>

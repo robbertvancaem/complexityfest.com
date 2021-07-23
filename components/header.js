@@ -1,10 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-
-import HeaderSrc from '../static/images/header.png';
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.header`
-  border-bottom: 8px solid ${props => props.theme.colors.greyGreen};
+  border-bottom: 8px solid ${(props) => props.theme.colors.greyGreen};
 
   img {
     width: 100%;
@@ -14,7 +12,7 @@ const Wrapper = styled.header`
 
 const Header = () => (
   <Wrapper>
-    <img src={HeaderSrc} alt="header" />
+    <img src="/static/images/header.jpeg" alt="header" />
   </Wrapper>
 );
 

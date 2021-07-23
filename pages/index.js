@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { useSpring, animated } from 'react-spring';
+import React, { useEffect, useRef } from "react";
+import styled from "styled-components";
+import { useSpring, animated } from "react-spring";
 
-import config from '../config/env';
-import { getNews } from '../data/posts';
-import Button from '../components/button';
-import { Box, Flex } from '../components/flexbox';
-import News from '../components/news';
-import Background from '../static/images/1.jpg';
-import NewsletterForm from '../components/newsletter-form';
+import config from "../config/env";
+import { getNews } from "../data/posts";
+import Button from "../components/button";
+import { Box, Flex } from "../components/flexbox";
+import News from "../components/news";
+import Background from "../static/images/1.jpg";
+import NewsletterForm from "../components/newsletter-form";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   }
   .background-word {
     opacity: 0.05;
-    color: ${props => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.black};
     font-size: 18em;
     font-weight: 700;
     transform-origin: left bottom;
@@ -47,7 +47,7 @@ const CtaWrapper = styled(Flex)`
     font-weight: 700;
     text-align: center;
     padding: 0 0.25em 0.15em;
-    background: ${props => props.theme.colors.black};
+    background: ${(props) => props.theme.colors.black};
     transform: skew(0deg, -2deg);
   }
 
@@ -57,16 +57,22 @@ const CtaWrapper = styled(Flex)`
 `;
 
 const Cta = () => (
-  <CtaWrapper pt="12em" pb="8em" background="white" alignItems="center" flexDirection="column">
+  <CtaWrapper
+    pt="12em"
+    pb="8em"
+    background="white"
+    alignItems="center"
+    flexDirection="column"
+  >
     <Box>
-      <h1>Complexity Fest 2020</h1>
+      <h1>Complexity Fest 2022</h1>
     </Box>
     <Box>
-      <h2>February 15, 2020</h2>
+      <h2>February 12, 2022</h2>
     </Box>
     <Box mt="4em">
       <Button href={config.ticketLink} icon="shopping-cart">
-        Tickets &euro;39,50
+        Tickets &euro;41
       </Button>
     </Box>
   </CtaWrapper>
@@ -81,10 +87,10 @@ const Index = ({ news }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   });
   return (
@@ -93,7 +99,9 @@ const Index = ({ news }) => {
         <div className="background-word-wrapper">
           <animated.div
             style={{
-              transform: offset.interpolate(o => `rotate(90deg) translateX(${o * 0.1}px)`),
+              transform: offset.interpolate(
+                (o) => `rotate(90deg) translateX(${o * 0.1}px)`
+              ),
             }}
             className="background-word"
           >
@@ -102,7 +110,7 @@ const Index = ({ news }) => {
         </div>
         <Cta />
         <NewsletterForm />
-        {news.map(n => (
+        {news.map((n) => (
           <News key={n.id} {...n} />
         ))}
       </Box>
