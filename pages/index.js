@@ -7,7 +7,6 @@ import { getNews } from "../data/posts";
 import Button from "../components/button";
 import { Box, Flex } from "../components/flexbox";
 import News from "../components/news";
-import Background from "../static/images/1.jpg";
 import NewsletterForm from "../components/newsletter-form";
 
 const Wrapper = styled.div`
@@ -37,7 +36,7 @@ const Wrapper = styled.div`
 `;
 
 const CtaWrapper = styled(Flex)`
-  background: url("${Background}") center center no-repeat;
+  background: url("/images/1.jpg") center center no-repeat;
   background-size: cover;
 
   h1, h2 {
@@ -68,11 +67,11 @@ const Cta = () => (
       <h1>Complexity Fest 2022</h1>
     </Box>
     <Box>
-      <h2>February 12, 2022</h2>
+      <h2>July 23<sup>rd</sup>, 2022</h2>
     </Box>
     <Box mt="4em">
       <Button href={config.ticketLink} icon="shopping-cart">
-        Tickets &euro;41
+        Tickets &euro;32,50
       </Button>
     </Box>
   </CtaWrapper>

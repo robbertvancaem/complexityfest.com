@@ -57,9 +57,14 @@ const Index = ({ shows }) => {
             SHOWS
           </animated.div>
         </div>
-        {shows.map(show => (
+        {shows && shows.length ? shows.map(show => (
           <Show key={show.id} {...show} />
-        ))}
+        ))
+        : (
+          <Box p={32}>
+            No shows are scheduled for now...
+          </Box>
+        )}
       </Box>
     </Wrapper>
   );
