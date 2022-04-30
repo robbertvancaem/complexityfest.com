@@ -14,12 +14,15 @@ const Lineup = ({ artists }) => (
   </Box>
 );
 
-Lineup.getInitialProps = async () => {
+export async function getStaticProps() {
   const artists = await getArtists();
 
   return {
-    artists,
+    props: {
+      artists,
+    },
+    revalidate: 1,
   };
-};
+}
 
 export default Lineup;

@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
-import { useSpring, animated } from "react-spring";
+import React, { useEffect, useRef } from 'react';
+import styled from 'styled-components';
+import { useSpring, animated } from 'react-spring';
 
-import config from "../config/env";
-import { getNews } from "../data/posts";
-import Button from "../components/button";
-import { Box, Flex } from "../components/flexbox";
-import News from "../components/news";
-import NewsletterForm from "../components/newsletter-form";
+import config from '../config/env';
+import { getNews } from '../data/posts';
+import Button from '../components/button';
+import { Box, Flex } from '../components/flexbox';
+import News from '../components/news';
+import NewsletterForm from '../components/newsletter-form';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   }
   .background-word {
     opacity: 0.05;
-    color: ${(props) => props.theme.colors.black};
+    color: ${props => props.theme.colors.black};
     font-size: 18em;
     font-weight: 700;
     transform-origin: left bottom;
@@ -67,7 +67,11 @@ const Cta = () => (
       <h1>Complexity Fest 2022</h1>
     </Box>
     <Box>
-      <h2>July 23<sup>rd</sup>, 2022</h2>
+      <h2>
+        July 23
+        <sup>rd</sup>
+        , 2022
+      </h2>
     </Box>
     <Box mt="4em">
       <Button href={config.ticketLink} icon="shopping-cart">
@@ -86,10 +90,10 @@ const Index = ({ news }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   });
   return (
@@ -99,7 +103,7 @@ const Index = ({ news }) => {
           <animated.div
             style={{
               transform: offset.interpolate(
-                (o) => `rotate(90deg) translateX(${o * 0.1}px)`
+                o => `rotate(90deg) translateX(${o * 0.1}px)`,
               ),
             }}
             className="background-word"
@@ -109,7 +113,7 @@ const Index = ({ news }) => {
         </div>
         <Cta />
         <NewsletterForm />
-        {news.map((n) => (
+        {news.map(n => (
           <News key={n.id} {...n} />
         ))}
       </Box>
@@ -117,11 +121,14 @@ const Index = ({ news }) => {
   );
 };
 
-Index.getInitialProps = async () => {
+export async function getStaticProps() {
   const news = await getNews();
   return {
-    news,
+    props: {
+      news,
+    },
+    revalidate: 1,
   };
-};
+}
 
 export default Index;

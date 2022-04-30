@@ -14,15 +14,18 @@ const Fest = ({ title, htmlContent }) => (
   </div>
 );
 
-Fest.getInitialProps = async () => {
+export async function getStaticProps() {
   const {
     page: { title, htmlContent },
   } = await getPage('festival');
 
   return {
-    title,
-    htmlContent,
+    props: {
+      title,
+      htmlContent,
+    },
+    revalidate: 1,
   };
-};
+}
 
 export default Fest;

@@ -18,16 +18,19 @@ const Practical = ({ pageTitle, items }) => (
   </Box>
 );
 
-Practical.getInitialProps = async () => {
+export async function getStaticProps() {
   const {
     page: { title },
     items,
   } = await getPage('practical');
 
   return {
-    pageTitle: title,
-    items,
+    props: {
+      pageTitle: title,
+      items,
+    },
+    revalidate: 1,
   };
-};
+}
 
 export default Practical;

@@ -60,20 +60,23 @@ const Index = ({ shows }) => {
         {shows && shows.length ? shows.map(show => (
           <Show key={show.id} {...show} />
         ))
-        : (
-          <Box p={32}>
-            No shows are scheduled for now...
-          </Box>
-        )}
+          : (
+            <Box p={32}>
+              No shows are scheduled for now...
+            </Box>
+          )}
       </Box>
     </Wrapper>
   );
 };
 
-Index.getInitialProps = async () => {
+export async function getStaticProps() {
   const shows = await getShows();
   return {
-    shows,
+    props: {
+      shows,
+    },
+    revalidate: 1
   };
 };
 
