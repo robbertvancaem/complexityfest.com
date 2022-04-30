@@ -1,19 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
-import Background from '../static/images/background.jpg';
-import AdamLadd from '../static/fonts/Adam Ladd - Config Alt Medium.otf';
-import Rutherford from '../static/fonts/Device - Rutherford Bold.otf';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Adam Ladd';
   font-weight: 400;
-  src: url("${AdamLadd}") format('opentype');
+  src: url("/fonts/Adam Ladd - Config Alt Medium.otf") format('opentype');
 }
 
 @font-face {
   font-family: 'Rutherford';
   font-weight: 700;
-  src: url("${Rutherford}") format('opentype');
+  src: url("/fonts/Device - Rutherford Bold.otf") format('opentype');
 }
 
 body {

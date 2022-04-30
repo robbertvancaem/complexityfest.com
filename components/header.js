@@ -12,7 +12,7 @@ const Wrapper = styled.header`
 
 const Header = () => (
   <Wrapper>
-    <img src="/static/images/header.jpeg" alt="header" />
+    <img src="/images/header.jpg" alt="header" />
   </Wrapper>
 );
 
