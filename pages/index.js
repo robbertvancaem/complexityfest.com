@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
+import Image from 'next/image';
 
 import config from '../config/env';
 import { getNews } from '../data/posts';
@@ -8,6 +9,7 @@ import Button from '../components/button';
 import { Box, Flex } from '../components/flexbox';
 import News from '../components/news';
 import NewsletterForm from '../components/newsletter-form';
+import headerImg from '../public/images/1.jpg';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -64,18 +66,21 @@ const Cta = () => (
     flexDirection="column"
   >
     <Box>
-      <h1>Complexity Fest 2022</h1>
+      <h1>Complexity Fest 2023</h1>
     </Box>
     <Box>
       <h2>
-        July 23
-        <sup>rd</sup>
-        , 2022
+        February 25
+        <sup>th</sup>
+        , 2023
       </h2>
     </Box>
+    <div>
+      <Image src={headerImg} layout="responsive" placeholder="blur" />
+    </div>
     <Box mt="4em">
       <Button href={config.ticketLink} icon="shopping-cart">
-        Tickets &euro;32,50
+        Tickets &euro;41,00
       </Button>
     </Box>
   </CtaWrapper>

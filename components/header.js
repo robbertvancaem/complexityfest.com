@@ -1,5 +1,7 @@
 import React from "react";
+import Image from 'next/image';
 import styled from "styled-components";
+import headerImg from '../public/images/header.png';
 
 const Wrapper = styled.header`
   border-bottom: 8px solid ${(props) => props.theme.colors.greyGreen};
@@ -12,7 +14,7 @@ const Wrapper = styled.header`
 
 const Header = () => (
   <Wrapper>
-    <img src="/images/header.jpg" alt="header" />
+    <Image src={headerImg} layout="responsive" alt="header" placeholder="blur" />
   </Wrapper>
 );
 

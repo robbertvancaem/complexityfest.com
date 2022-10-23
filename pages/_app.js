@@ -27,10 +27,6 @@ export default class MyApp extends App {
       <ThemeProvider theme={theme}>
         <div>
           <Head>
-            <link
-              rel="stylesheet"
-              href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css"
-            />
             <title>Complexity Fest | complexityfest.com</title>
           </Head>
           <GlobalStyle />

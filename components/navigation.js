@@ -83,7 +83,7 @@ const Navigation = () => (
   <Wrapper>
     <Flex>
       <Link href="/" scroll={false}>
-        <a>Complexity Fest 2022</a>
+        <a>Complexity Fest 2023</a>
       </Link>
       <Box width="2em" align="center">
         {"//"}

@@ -1,11 +1,11 @@
 const devConfig = {
   wpUrl: "https://complexityfest.com/",
-  ticketLink: "https://www.ticketmaster.nl/event/281205?brand=nl_patronaat",
+  ticketLink: "https://www.ticketmaster.nl/event/285317?brand=nl_patronaat",
 };
 
 const prodConfig = {
   wpUrl: "https://complexityfest.com/",
-  ticketLink: "https://www.ticketmaster.nl/event/281205?brand=nl_patronaat",
+  ticketLink: "https://www.ticketmaster.nl/event/285317?brand=nl_patronaat",
 };
 
 const getConfig = (env) => {
