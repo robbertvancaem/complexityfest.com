@@ -44,6 +44,7 @@ const Index = ({ shows }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   });
+
   return (
     <Wrapper>
       <Box relative ref={ref}>

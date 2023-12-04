@@ -16,6 +16,11 @@ const Wrapper = styled(Flex)`
   p {
     white-space: pre-line;
   }
+
+  img {
+    width: auto;
+    height: auto;
+  }
 `;
 
 const News = ({ title, content, date }) => (
