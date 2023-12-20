@@ -8,7 +8,6 @@ import { getNews } from '../data/posts';
 import Button from '../components/button';
 import { Box, Flex } from '../components/flexbox';
 import News from '../components/news';
-import NewsletterForm from '../components/newsletter-form';
 import headerImg from '../public/images/1.jpg';
 
 const Wrapper = styled.div`
@@ -66,13 +65,13 @@ const Cta = () => (
     flexDirection="column"
   >
     <Box>
-      <h1>Complexity Fest 2023</h1>
+      <h1>Complexity Fest 2024</h1>
     </Box>
     <Box>
       <h2>
-        February 25
+        August 17th
         <sup>th</sup>
-        , 2023
+        , 2024
       </h2>
     </Box>
     <div>
@@ -80,7 +79,7 @@ const Cta = () => (
     </div>
     <Box mt="4em">
       <Button href={config.ticketLink} icon="shopping-cart">
-        Tickets &euro;41,00
+        Tickets &euro;47,50
       </Button>
     </Box>
   </CtaWrapper>
@@ -117,7 +116,6 @@ const Index = ({ news }) => {
           </animated.div>
         </div>
         <Cta />
-        <NewsletterForm />
         {news.map(n => (
           <News key={n.id} {...n} />
         ))}
