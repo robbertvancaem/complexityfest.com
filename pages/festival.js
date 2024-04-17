@@ -6,7 +6,6 @@ import getPage from '../data/page';
 
 const Fest = ({ title, htmlContent }) => (
   <div>
-    <Header />
     <Box py={['2em', null, '8em']} px={['9%', null, '31%']}>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
