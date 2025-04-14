@@ -1,11 +1,11 @@
 const devConfig = {
   wpUrl: "https://complexityfest.com/",
-  ticketLink: "https://www.ticketmaster.nl/event/300257?brand=nl_patronaat",
+  ticketLink: "https://patronaat.nl/event/complexity-fest-2025-23-08-25/",
 };
 
 const prodConfig = {
   wpUrl: "https://complexityfest.com/",
-  ticketLink: "https://www.ticketmaster.nl/event/300257?brand=nl_patronaat",
+  ticketLink: "https://patronaat.nl/event/complexity-fest-2025-23-08-25/",
 };
 
 const getConfig = (env) => {

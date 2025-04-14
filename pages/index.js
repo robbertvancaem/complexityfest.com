@@ -11,49 +11,50 @@ import News from '../components/news';
 import headerImg from '../public/images/1.jpg';
 
 const Wrapper = styled.div`
-  width: 100%;
-  min-height: 100vh;
-
-  .container {
-    min-height: 100vh;
-  }
-
-  .background-word-wrapper {
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-  .background-word {
-    opacity: 0.05;
-    color: ${props => props.theme.colors.black};
-    font-size: 18em;
-    font-weight: 700;
-    transform-origin: left bottom;
-  }
+    min-height: 100vh;
+
+    .container {
+        min-height: 100vh;
+    }
+
+    .background-word-wrapper {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    .background-word {
+        opacity: 0.05;
+        color: ${props => props.theme.colors.black};
+        font-size: 18em;
+        font-weight: 700;
+        transform-origin: left bottom;
+    }
 `;
 
 const CtaWrapper = styled(Flex)`
-  background: url("/images/1.jpg") center center no-repeat;
-  background-size: cover;
+    background: url("/images/1.jpg") center center no-repeat;
+    background-size: cover;
 
-  h1, h2 {
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
-    font-weight: 700;
-    text-align: center;
-    padding: 0 0.25em 0.15em;
-    background: ${({ theme }) => theme.colors.black};
-    transform: skew(0deg, -2deg);
-  }
+    h1,
+    h2 {
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        font-weight: 700;
+        text-align: center;
+        padding: 0 0.25em 0.15em;
+        background: ${({ theme }) => theme.colors.black};
+        transform: skew(0deg, -2deg);
+    }
 
-  h2 {
-    letter-spacing: -2px;
-  }
+    h2 {
+        letter-spacing: -2px;
+    }
 `;
 
 const Cta = () => (
@@ -65,13 +66,13 @@ const Cta = () => (
     flexDirection="column"
   >
     <Box>
-      <h1>Complexity Fest 2024</h1>
+      <h1>Complexity Fest 2025</h1>
     </Box>
     <Box>
       <h2>
-        August 17th
-        <sup>th</sup>
-        , 2024
+                August 23
+        <sup>rd</sup>
+, 2025
       </h2>
     </Box>
     <div>
@@ -79,7 +80,7 @@ const Cta = () => (
     </div>
     <Box mt="4em">
       <Button href={config.ticketLink} icon="shopping-cart">
-        Tickets &euro;47,50
+                Tickets &euro;45,50
       </Button>
     </Box>
   </CtaWrapper>
@@ -112,7 +113,7 @@ const Index = ({ news }) => {
             }}
             className="background-word"
           >
-            COMPLEXITY
+                        COMPLEXITY
           </animated.div>
         </div>
         <Cta />
